@@ -229,7 +229,9 @@ export async function askWeb3AI(question: string, _sourceCode?: string) {
       "Do NOT give a full audit. Be specific to LockFi code only. " +
       "Note: encrypted balances being public is INTENTIONAL MEV protection. " +
       "Question: " +
-      question;
+      question +
+      "\n\nCONTRACT CODE:\n" +
+      (_sourceCode || "");
 
     const response = await ai.auditSmartContractBlob({
       question: prompt,
