@@ -1,73 +1,65 @@
-# React + TypeScript + Vite
+# 🔐 LockFi — Confidential Web3 Vault
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+LockFi is a privacy-focused DeFi vault built on Arbitrum Sepolia using iExec Nox Protocol.  
+It enables users to deposit tokens while keeping their balances encrypted on-chain, protecting them from MEV bots and copy-trading.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🌟 Problem
 
-## React Compiler
+Over $1.2B+ is lost annually due to MEV attacks and copy-trading in DeFi.  
+Public blockchain transparency exposes user positions, making them vulnerable.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 💡 Solution
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+LockFi introduces a **Confidential Vault** where:
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- Balances are stored as encrypted data
+- Users maintain full control over their funds
+- Bots cannot detect positions or strategies
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 🧠 Key Features
+
+- 🔐 Encrypted Balances (iExec Nox)
+- 🛡️ MEV Protection
+- ⚡ ERC-7540 Async Withdrawals
+- 🤖 AI Smart Contract Audit (ChainGPT)
+- 💻 Full-stack dApp (React + Vite + Tailwind)
+
+---
+
+## 🚀 Quick Start (Frontend)
+
+### 1. Install dependencies
+```bash
+pnpm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### 2. Setup environment
+Create a `.env` file in this directory:
+```env
+VITE_CHAINGPT_API_KEY=your_api_key
+VITE_VAULT_ADDRESS=0xbb70238bAC1854d392bfA11e0bD942A472C0D33B
+VITE_TOKEN_ADDRESS=0x428B490C2fb0E3137AfB478adc7cF3B668209534
 ```
+
+### 3. Run frontend
+```bash
+pnpm dev
+```
+
+---
+
+## 🧑‍💻 Author
+
+Yousuf Aziz
+
+---
+
+## 🏆 Hackathon
+
+Built for **iExec Vibe Coding Challenge**
