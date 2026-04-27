@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Backgrounds */
+    --bg-base:       #0a0a0a;
+    --bg-surface:    #111111;
+    --bg-elevated:   #1a1a1a;
+
+    /* Borders */
+    --border-subtle: #222222;
+    --border-active: #00ff8866;
+
+    /* Brand */
+    --accent:        #00ff88;
+    --accent-2:      #00cc6a;
+    --accent-glow:   #00ff8835;
+
+    /* Danger */
+    --danger:        #ff3366;
+
+    /* Text */
+    --text-primary:  #e0e0e0;
+    --text-muted:    #888888;
+    --text-faint:    #444444;
+
+    /* Status */
+    --success:       #00ff88;
+    --warning:       #facc15;
+    --error:         #ff3366;
+  }
+
+  body {
+    @apply bg-[var(--bg-base)] text-[var(--text-primary)] antialiased;
+    font-family: 'Space Mono', monospace;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@layer utilities {
+  .bg-mesh {
+    background:
+      radial-gradient(ellipse 80% 80% at 20% -20%, #00ff8811 0%, transparent 60%),
+      radial-gradient(ellipse 60% 60% at 80% 110%, #ff336611 0%, transparent 60%),
+      var(--bg-base);
+    animation: meshDrift 10s ease-in-out infinite alternate;
+  }
+  
+  .glass-card {
+    @apply bg-white/[0.03] border border-white/[0.08] backdrop-blur-xl rounded-2xl;
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent) 50%, var(--accent-2) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+@keyframes meshDrift {
+  from { background-position: 0% 0%; }
+  to   { background-position: 100% 100%; }
+}
+
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.animate-in {
+  animation: fadeSlideUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+.stagger > *:nth-child(1) { animation-delay: 0ms; }
+.stagger > *:nth-child(2) { animation-delay: 80ms; }
+.stagger > *:nth-child(3) { animation-delay: 160ms; }
+.stagger > *:nth-child(4) { animation-delay: 240ms; }
+.stagger > *:nth-child(5) { animation-delay: 320ms; }
