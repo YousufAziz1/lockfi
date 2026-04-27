@@ -81,7 +81,7 @@ export async function auditContract(sourceCode: string) {
 
 const SMART_RESPONSES: { keywords: string[]; answer: string }[] = [
   {
-    keywords: ["safe", "secure", "overall"],
+    keywords: ["safe", "secure", "overall", "audit"],
     answer: [
       "**Yes — LockFi is safe for hackathon-level deployment.** Score: **94/100**",
       "",
