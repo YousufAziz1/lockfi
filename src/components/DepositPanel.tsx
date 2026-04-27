@@ -13,6 +13,10 @@ export const DepositPanel = () => {
 
   const handleDeposit = async () => {
     if (!address || !amount) return;
+    if (parseFloat(amount) <= 0) {
+      alert("Enter valid no");
+      return;
+    }
     
     try {
       setStep('approving');

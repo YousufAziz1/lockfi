@@ -29,6 +29,10 @@ export const WithdrawPanel = () => {
 
   const handleRequest = async () => {
     if (!address || !amount) return;
+    if (parseFloat(amount) <= 0) {
+      alert("Enter valid no");
+      return;
+    }
     try {
       setStep('requesting');
       const provider = new ethers.BrowserProvider(window.ethereum!);
