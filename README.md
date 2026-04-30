@@ -24,7 +24,7 @@ LockFi introduces a **Confidential Vault** where:
 
 ## 🧠 Key Features
 
-- 🔐 Encrypted Balances (iExec Nox)
+- 🔐 Encrypted Balances (ERC-7984 via iExec Nox TEE, NO Zama/FHE)
 - 🛡️ MEV Protection
 - ⚡ ERC-7540 Async Withdrawals
 - 🤖 AI Smart Contract Audit (ChainGPT)

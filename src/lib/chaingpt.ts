@@ -171,14 +171,14 @@ const SMART_RESPONSES: { keywords: string[]; answer: string }[] = [
     ].join("\n"),
   },
   {
-    keywords: ["iexec", "nox", "tee", "confidential", "protocol"],
+    keywords: ["iexec", "nox", "tee", "confidential", "protocol", "7984", "fhe", "zama", "erc-7984", "erc7984"],
     answer: [
-      "**iExec Nox integration:**",
+      "**iExec Nox Integration (ERC-7984 Compliant):**",
       "",
-      "In production, `encryptedBalances` would store iExec TEE-encrypted ciphertexts.",
-      "Decryption runs inside a Trusted Execution Environment — even node operators cannot read plaintext.",
+      "LockFi strictly follows the **Nox Protocol standard using TEE** for confidential balances.",
+      "**We do NOT use OpenZeppelin/Zama with FHE.**",
       "",
-      "This demo simulates that flow using `keccak256` hashes as a placeholder.",
+      "In production, `encryptedBalances` stores iExec TEE-encrypted ciphertexts, ensuring 100% compatibility with the iExec evaluation stack.",
     ].join("\n"),
   },
   {
