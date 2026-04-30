@@ -1,5 +1,4 @@
-export const FULL_DARKVAULT_CODE = \
-\\\solidity
+export const FULL_DARKVAULT_CODE = `
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.28;
 
@@ -126,5 +125,4 @@ contract DarkVault is ERC7984, Ownable {
         return interest;
     }
 }
-\
-\\\;
+`;
